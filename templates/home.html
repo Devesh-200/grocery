@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h4 {
+            color: #333;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #343a40;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .navbar-nav .nav-link {
+            color: #ccc;
+            font-weight: 500;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #007bff;
+        }
+
+        /* Carousel */
+        .carousel-inner img {
+            object-fit: cover;
+            height: 400px;
+        }
+
+        /* Titles for categories */
+        h4.groceries-title, h4.clothes-title, h4.sports-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Product Cards */
+        .card {
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-body {
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .card-text {
+            font-size: 14px;
+            color: #777;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .card-footer {
+            background-color: #f8f9fa;
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+        }
+
+        .btn-primary {
+            margin-top: 15px;
+            background-color: #007bff;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        /* Cart Button and Cart Count */
+        #cartCount {
+            font-size: 16px;
+            background-color: #ff5733;
+            border-radius: 50%;
+            padding: 5px 10px;
+            color: white;
+            position: relative;
+            top: -10px;
+            right: 10px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+            margin-top: 30px;
+        }
+
+        footer .nav-item {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        footer .nav-link {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        footer .nav-link:hover {
+            color: #fff;
+        }
+
+        footer p {
+            text-align: center;
+            font-size: 14px;
+            color: #888;
+            margin-top: 15px;
+        }
+
+        /* Responsive Layout */
+        @media (max-width: 767px) {
+            .groceries-title, .clothes-title, .sports-title {
+                font-size: 20px;
+            }
+
+            .card-body {
+                padding: 15px;
+            }
+        }
+    </style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">GROCEMART</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cart">Cart</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Customer Care</a>
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/static/img1.webp" class="d-block w-100" alt="..." style="height: 400px; object-fit: cover;">
+            </div>
+            <div class="carousel-item">
+                <img src="/static/img2.webp" class="d-block w-100" alt="..." style="height: 400px; object-fit: cover;">
+            </div>
+            <div class="carousel-item">
+                <img src="/static/img3.webp" class="d-block w-100" alt="..." style="height: 400px; object-fit: cover;">
+            </div>
+            <div class="carousel-item">
+                <img src="/static/img4.jpg" class="d-block w-100" alt="..." style="height: 400px; object-fit: cover;">
+            </div>
+            <div class="carousel-item">
+                <img src="/static/img5.jpg" class="d-block w-100" alt="..." style="height: 400px; object-fit: cover;">
+            </div>
+            <div class="carousel-item">
+                <img src="/static/img6.jpg" class="d-block w-100" alt="..." style="height: 400px; object-fit: cover;">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <p>
+    <h1 align="center">
+        THIS IS AN ONLINE WEBSITE FOR SHOPPING GROCERY AND CLOTHES.
+    </h1>
+    </p>
+    <div class="container">
+        <h4 class="groceries-title">GROCERIES :</h4>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="/static/amul.jpg" class="card-img-top" alt="Amul Taaza Milk">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Amul Taaza Milk</h5>
+                        <p class="card-text">Amul Taaza Milk is fresh, pure, and nutritious. It is a full-cream milk that is an essential part of your daily diet. Amul's trusted quality ensures the best taste and nutrition for you and your family.</p>
+                        <button class="btn btn-primary" onclick="addToCart('Amul Taaza Milk', 50, '/static/amul.jpg')">Add to Cart</button>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col">
+                <div class="card h-100">
+                    <img src="/static/ghee.jpg" class="card-img-top" alt="Amul Ghee">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Amul Ghee</h5>
+                        <p class="card-text">Amul Ghee is made from fresh cow's milk and is ideal for cooking. It adds rich flavor and aroma to your dishes. Ghee is known for its health benefits and is an important part of traditional Indian cooking.</p>
+                        <button class="btn btn-primary" onclick="addToCart('Amul Ghee', 250, '/static/ghee.jpg')">Add to Cart</button>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col">
+                <div class="card h-100">
+                    <img src="/static/aata.jpg" class="card-img-top" alt="Aashirvaad Aata">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Aashirvaad Aata (Wheat Flour)</h5>
+                        <p class="card-text">Aashirvaad Aata is made from the finest wheat and is perfect for making soft, fluffy rotis and parathas. It is rich in fiber, vitamins, and minerals, making it an ideal choice for healthy, wholesome meals.</p>
+                        <button class="btn btn-primary" onclick="addToCart('Aashirvaad Aata', 120, '/static/aata.jpg' )">Add to Cart</button>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CLOTHES CATEGORY -->
+    <div class="container">
+        <h4 class="clothes-title">CLOTHES :</h4>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="/static/kurta.jpg" class="card-img-top" alt="Mens Kurtas">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Mens Kurtas</h5>
+                        <p class="card-text">Perfect for festive occasions, made from 100% breathable cotton.</p>
+                        <button class="btn btn-primary" onclick="addToCart('Mens Kurtas', 500, '/static/kurta.jpg')">Add to Cart</button>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="/static/saree.jpg" class="card-img-top" alt="Womens Sarees">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Womens Sarees</h5>
+                        <p class="card-text">Ideal for weddings and festive celebrations.</p>
+                        <button class="btn btn-primary" onclick="addToCart('Womens Sarees', 1200, '/static/saree.jpg')">Add to Cart</button>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="/static/trousers.jpg" class="card-img-top" alt="Mens Trousers">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Trousers for Mens</h5>
+                        <p class="card-text">Comfortable stretch fabric with a tailored fit, perfect for casual outings or office wear.</p>
+                        <button class="btn btn-primary" onclick="addToCart('Mens Trousers', 700, '/static/trousers.jpg')">Add to Cart</button>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SPORTS CATEGORY -->
+    <div class="container">
+        <h4 class="sports-title">SPORTS :</h4>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="/static/bat.jpg" class="card-img-top" alt="Willow Bat">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Willow Bat</h5>
+                        <p class="card-text">Made from premium grade willow for power hitting.</p>
+                        <button class="btn btn-primary" onclick="addToCart('Willow Bat', 1500, '/static/bat.jpg')">Add to Cart</button>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="/static/football.jpg" class="card-img-top" alt="Football">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Football</h5>
+                        <p class="card-text">Durable, high-quality football designed for both training and matches.</p>
+                        <button class="btn btn-primary" onclick="addToCart('Football', 800, '/static/football.jpg')">Add to Cart</button>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="/static/badminton.webp" class="card-img-top" alt="Yonex Badminton Racket">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Yonex Badminton Racket</h5>
+                        <p class="card-text">Lightweight, high-performance racket designed for precision and power.</p>
+                        <button class="btn btn-primary" onclick="addToCart('Yonex Badminton Racket', 1200, '/static/badminton.webp')">Add to Cart</button>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Show Cart Button -->
+    <div class="container">
+        <button id="showCartBtn" class="btn btn-primary" style="margin-top: 20px;" onclick="showCart()">Show Cart</button>
+        <span id="cartCount">0</span> <!-- Cart item count -->
+    </div>
+
+    <div class="container">
+        <footer class="py-3 my-4 bg-dark text-white">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="" class="nav-link px-2 text-white">Home</a></li>
+                <li class="nav-item"><a href="" class="nav-link px-2 text-white">Features</a></li>
+                <li class="nav-item"><a href="" class="nav-link px-2 text-white">Pricing</a></li>
+                <li class="nav-item"><a href="" class="nav-link px-2 text-white">FAQs</a></li>
+                <li class="nav-item"><a href="" class="nav-link px-2 text-white">About</a></li>
+            </ul>
+            <p class="text-center">© 2024 Company, Inc</p>
+        </footer>
+    </div>
+
+
+
+
+
+
+</body>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+<script>
+    // Initialize cart
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Update cart count
+    function updateCartCount() {
+        const cartCount = cart.length;
+        document.getElementById("cartCount").innerText = cartCount;
+    }
+
+    // Add to cart function
+    function addToCart(productName, productPrice, productImage) {
+    cart.push({ name: productName, price: productPrice, image: productImage });
+    localStorage.setItem("cart", JSON.stringify(cart));  // Save cart to localStorage
+    updateCartCount();  // Update cart count on the page
+}  // Update cart count on the page
+    
+
+    // Redirect to cart page (show cart)
+    function showCart() {
+        window.location.href = 'cart';  // Redirect to cart page
+    }
+
+    // Initial update of cart count
+    updateCartCount();
+</script>
+
+</html>
